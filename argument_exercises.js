@@ -106,3 +106,15 @@ class Cat {
 
 const curry = curriedSum(4);
 console.log(curry(5)(30)(20)(1)); // => 56
+
+
+Function.prototype.curry = function(numArgs) {
+   let args = [];
+   let kyle = this;
+   
+   return function _curriedFunction(arg) {
+      args.push(arg)
+      
+
+   }
+}
