@@ -85,3 +85,24 @@ class Cat {
  notMarkovSays("meow", "me");
  // Pavlov says meow to me!
  // true
+
+
+
+ function curriedSum(numArgs) {
+   let numbers = [];
+
+   return function _curriedSum(arg) {
+      numbers.push(arg);
+      if (numbers.length === numArgs) {
+         let totalSum = 0;
+         numbers.forEach(el => totalSum += el);
+         return totalSum;
+      } else {
+         return _curriedSum;
+      }
+   }
+
+ }
+
+const curry = curriedSum(4);
+console.log(curry(5)(30)(20)(1)); // => 56
